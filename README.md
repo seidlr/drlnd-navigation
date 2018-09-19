@@ -38,7 +38,7 @@ The task is episodic, and in order to solve the environment, the agent must get 
 #### Train the agent
 To train the agent either start `Navigation.ipynb` and follow the steps in the notebook or run the script `train_agent.py`.
 ```bash
-$ python train_agent.py --episodes 1000 --output_model model.pth --plot  
+$ python train_agent.py --episodes 1000 --output_model checkpoint.pth --plot Score.png 
 ```
 #### Test the agent
 To run the trained agent in the environment
