@@ -1,3 +1,4 @@
+# python test_agent.py --model checkpoint.pth
 import argparse
 import sys
 import os
@@ -11,7 +12,7 @@ from dqn_agent import Agent
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Test the agent in the environment')
-    parser.add_argument('--model', help="path to the saved pytorch model")
+    parser.add_argument('--model', required=True, help="path to the saved pytorch model")
 
     result = parser.parse_args(sys.argv[1:])
 
