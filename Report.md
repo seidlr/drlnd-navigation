@@ -37,7 +37,7 @@ UPDATE_EVERY = 4        # how often to update the network
 ```
 
 ## Achieved Rewards
-The trained agent was traied until an average reward of +15 was achieved. 
+The agent was trained until an average reward of +15 was achieved. 
 ![Scores](Score.png "Agent score over episodes")  
 The plot shows the average rewards and its rolling mean. The agent is clearly able to learn how to handle the environment successfully.
 
