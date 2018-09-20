@@ -2,6 +2,7 @@
 import argparse
 from collections import deque
 import sys
+import time
 import os
 
 from unityagents import UnityEnvironment
@@ -26,7 +27,8 @@ def dqn(n_episodes=2000, max_t=1000, eps_start=1.0, eps_end=0.01, eps_decay=0.99
     """
     scores = []                        # list containing scores from each episode
     scores_window = deque(maxlen=100)  # last 100 scores
-    eps = eps_start                    # initialize epsilon
+    eps = eps_start 
+    start = time.time()                   # initialize epsilon
     for i_episode in range(1, n_episodes+1):
         env_info = env.reset(train_mode=True)[brain_name] # reset the environment
         state = env_info.vector_observations[0]  
@@ -51,6 +53,9 @@ def dqn(n_episodes=2000, max_t=1000, eps_start=1.0, eps_end=0.01, eps_decay=0.99
         if np.mean(scores_window)>=15.0:
             print('\nEnvironment solved in {:d} episodes!\tAverage Score: {:.2f}'.format(i_episode-100, np.mean(scores_window)))
             torch.save(agent.qnetwork_local.state_dict(), 'checkpoint.pth')
+            end = time.time()
+            print("\nTime needed for solution: {} s".format(end - start))
+
             break
     return scores
 
@@ -74,7 +79,7 @@ if __name__ == '__main__':
 
     options = parser.parse_args(sys.argv[1:])
     
-    env = UnityEnvironment(file_name="Banana.app")
+    env = UnityEnvironment(file_name="Banana_Linux/Banana.x86_64")
 
     # get the default brain
     brain_name = env.brain_names[0]

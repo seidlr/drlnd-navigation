@@ -23,7 +23,7 @@ if __name__ == '__main__':
         print ("File not found")
 
     
-    env = UnityEnvironment(file_name="Banana.app")
+    env = UnityEnvironment(file_name="Banana_Linux/Banana.x86_64")
 
     # get the default brain
     brain_name = env.brain_names[0]

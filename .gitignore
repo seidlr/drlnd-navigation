@@ -99,5 +99,6 @@ ENV/
 # own directories
 .DS_Store
 Banana.app/
+Banana_Linux/
 unity-environment.log
 agent.mov
